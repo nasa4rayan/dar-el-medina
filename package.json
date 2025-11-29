@@ -2,6 +2,7 @@
   "name": "dar-el-medina",
   "version": "1.0.0",
   "description": "Website for Dar El Medina Restaurant",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
