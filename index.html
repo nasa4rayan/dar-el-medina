@@ -1,38 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Dar El Medina - Authentic Moroccan Restaurant in the heart of Rabat's Old Medina. Experience traditional Tajines, Couscous, and a cozy atmosphere.">
-    <title>Dar El Medina | Moroccan Restaurant Rabat</title>
+        content="دار المدينة - مطعم مغربي أصيل في قلب المدينة القديمة بالرباط. استمتع بالطواجن التقليدية والكسكس والأجواء المريحة.">
+    <title>دار المدينة | مطعم مغربي بالرباط</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .btn,
+        .nav-links a {
+            font-family: 'Amiri', serif;
+        }
+
+        .slide-in-left {
+            text-align: right;
+        }
+
+        .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        .contact-info p {
+            flex-direction: row;
+        }
+
+        .contact-info i {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+    </style>
 </head>
 
 <body>
 
     <div id="loader">
-        <div class="loader-content">Dar El <span class="gold-text">Medina</span></div>
+        <div class="loader-content">دار <span class="gold-text">المدينة</span></div>
     </div>
 
     <nav id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Dar El <span class="gold-text">Medina</span></a>
+            <a href="#" class="logo">دار <span class="gold-text">المدينة</span></a>
+
+            <div class="lang-switch">
+                <a href="index.html" class="active">AR</a>
+                <span class="separator">|</span>
+                <a href="index-en.html">EN</a>
+                <span class="separator">|</span>
+                <a href="index-fr.html">FR</a>
+            </div>
+
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#reservation" class="btn-nav">Book a Table</a></li>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="menu.html">القائمة</a></li>
+                <li><a href="#gallery">الصور</a></li>
+                <li><a href="#reviews">آراء الزبائن</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="#reservation" class="btn-nav">احجز طاولة</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -40,15 +80,14 @@
         </div>
     </nav>
 
-
     <header id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Taste the Soul of <span class="gold-text">Morocco</span></h1>
-            <p class="fade-in-up delay-1">Authentic Dining in the Heart of Rabat's Old Medina</p>
+            <h1 class="fade-in-up">تذوق روح <span class="gold-text">المغرب</span></h1>
+            <p class="fade-in-up delay-1">مأكولات أصيلة في قلب المدينة القديمة بالرباط</p>
             <div class="hero-buttons fade-in-up delay-2">
-                <a href="#reservation" class="btn btn-primary">Reserve Now</a>
-                <a href="menu.html" class="btn btn-outline">View Menu</a>
+                <a href="#reservation" class="btn btn-primary">احجز الآن</a>
+                <a href="menu.html" class="btn btn-outline">قائمة الطعام</a>
             </div>
         </div>
         <div class="scroll-indicator fade-in-up delay-2">
@@ -58,211 +97,228 @@
         </div>
     </header>
 
-    <a href="https://wa.me/212702707071" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="whatsapp-popup-header">
+            <div class="whatsapp-popup-header-left">
+                <div class="whatsapp-popup-avatar">🍴</div>
+                <div>
+                    <div class="whatsapp-popup-name">دار المدينة</div>
+                    <div class="whatsapp-popup-status">متصل الآن</div>
+                </div>
+            </div>
+            <button class="whatsapp-popup-close" id="closeWhatsappPopup">×</button>
+        </div>
+        <div class="whatsapp-popup-body">
+            <div class="whatsapp-message">
+                مرحباً! كيف يمكننا مساعدتك؟
+            </div>
+        </div>
+        <div class="whatsapp-popup-footer">
+            <input type="text" class="whatsapp-popup-input" id="whatsappInput" placeholder="اكتب رسالتك...">
+            <button class="whatsapp-popup-send" id="sendWhatsapp">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
-
 
     <section id="about" class="section about">
         <div class="container about-container">
             <div class="about-text slide-in-left">
-                <h2 class="section-title">Our Story</h2>
-                <p>Nestled in the historic <strong>Old Medina of Rabat</strong>, <em>Dar El Medina</em> offers a
-                    sanctuary of flavors and tradition. We invite you to step into a world of warm amber lights,
-                    intricate geometric patterns, and the soothing sounds of live Moroccan music.</p>
-                <p>Our kitchen celebrates the rich heritage of Moroccan cuisine, crafting dishes with love, fresh local
-                    ingredients, and age-old recipes passed down through generations. Whether you are looking for a cozy
-                    family dinner or a romantic evening, our doors are open.</p>
+                <h2 class="section-title">قصتنا</h2>
+                <p>في قلب <strong>المدينة القديمة بالرباط</strong>، يقدم لكم <em>دار المدينة</em> ملاذاً للنكهات
+                    والتقاليد. ندعوكم للدخول إلى عالم من الأضواء الدافئة، والزخارف التقليدية، وأنغام الموسيقى المغربية
+                    الأصيلة.</p>
+                <p>مطبخنا يحتفي بالتراث الغني للمأكولات المغربية، حيث نعد الأطباق بحب باستخدام مكونات محلية طازجة ووصفات
+                    متوارثة عبر الأجيال. سواء كنتم تبحثون عن عشاء عائلي دافئ أو أمسية رومانسية، أبوابنا مفتوحة لكم.</p>
                 <div class="features">
-                    <div class="feature-item"><i class="fas fa-music"></i> Live Music</div>
-                    <div class="feature-item"><i class="fas fa-leaf"></i> Fresh Ingredients</div>
-                    <div class="feature-item"><i class="fas fa-home"></i> Authentic Vibe</div>
+                    <div class="feature-item"><i class="fas fa-music"></i> موسيقى حية</div>
+                    <div class="feature-item"><i class="fas fa-leaf"></i> مكونات طازجة</div>
+                    <div class="feature-item"><i class="fas fa-home"></i> أجواء أصيلة</div>
                 </div>
             </div>
             <div class="about-image slide-in-right">
-                <img src="images/interior.png" alt="Dar El Medina Interior">
+                <img src="images/interior.png" alt="تصميم داخلي لدار المدينة">
                 <div class="image-border"></div>
             </div>
         </div>
     </section>
 
-
     <section id="popular" class="section popular">
         <div class="container">
-            <h2 class="section-title center-text">Signature Dishes</h2>
-            <p class="section-subtitle center-text">A culinary journey through Morocco</p>
+            <h2 class="section-title center-text">أطباقنا المميزة</h2>
+            <p class="section-subtitle center-text">رحلة طهي عبر المغرب</p>
 
             <div class="dishes-grid">
                 <div class="dish-card">
                     <div class="dish-img">
-                        <img src="images/tajine.png" alt="Tajine Viande Boeuf Aux Pruneaux">
+                        <img src="images/tajine.png" alt="طاجين اللحم بالبرقوق">
                     </div>
                     <div class="dish-info">
-                        <h3>Tajine Viande Boeuf</h3>
-                        <p>Beef with prunes & almonds</p>
-                        <span class="price">120 MAD</span>
+                        <h3>طاجين اللحم</h3>
+                        <p>لحم البقر مع البرقوق واللوز</p>
+                        <span class="price">120 درهم</span>
                     </div>
                 </div>
                 <div class="dish-card">
                     <div class="dish-img">
-                        <img src="images/couscous.png" alt="Couscous Viande et Légumes">
+                        <img src="images/couscous.png" alt="كسكس ملكي">
                     </div>
                     <div class="dish-info">
-                        <h3>Royal Couscous</h3>
-                        <p>Meat & seven vegetables</p>
-                        <span class="price">110 MAD</span>
+                        <h3>كسكس ملكي</h3>
+                        <p>لحم وسبع خضاري</p>
+                        <span class="price">110 درهم</span>
                     </div>
                 </div>
                 <div class="dish-card">
                     <div class="dish-img">
-                        <img src="images/tea.png" alt="Moroccan Mint Tea">
+                        <img src="images/tea.png" alt="شاي مغربي">
                     </div>
                     <div class="dish-info">
-                        <h3>Moroccan Mint Tea</h3>
-                        <p>Traditional ceremonial tea</p>
-                        <span class="price">25 MAD</span>
+                        <h3>شاي مغربي</h3>
+                        <p>شاي بالنعناع التقليدي</p>
+                        <span class="price">25 درهم</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section id="menu" class="section menu-preview">
         <div class="container">
-            <h2 class="section-title center-text">Our Menu</h2>
+            <h2 class="section-title center-text">من القائمة</h2>
             <div class="menu-tabs">
-                <button class="tab-btn active" data-target="starters">Starters</button>
-                <button class="tab-btn" data-target="mains">Mains</button>
-                <button class="tab-btn" data-target="drinks">Drinks</button>
+                <button class="tab-btn active" data-target="starters">مقبلات</button>
+                <button class="tab-btn" data-target="mains">أطباق رئيسية</button>
+                <button class="tab-btn" data-target="drinks">مشروبات</button>
             </div>
 
             <div class="menu-content active" id="starters">
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Briouats</h4>
-                        <p>Crispy pastry filled with cheese, chicken, or seafood</p>
+                        <h4>بريوات</h4>
+                        <p>محشوة بالجبن، الدجاج، أو فواكه البحر</p>
                     </div>
-                    <span class="menu-price">60 MAD</span>
+                    <span class="menu-price">60 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Zaalouk</h4>
-                        <p>Smoked eggplant dip with spices and olive oil</p>
+                        <h4>زعلوك</h4>
+                        <p>باذنجان مدخن مع توابل وزيت زيتون</p>
                     </div>
-                    <span class="menu-price">45 MAD</span>
+                    <span class="menu-price">45 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Taktouka</h4>
-                        <p>Roasted pepper and tomato salad</p>
+                        <h4>تكتوكة</h4>
+                        <p>سلطة فلفل وطماطم مشوية</p>
                     </div>
-                    <span class="menu-price">45 MAD</span>
+                    <span class="menu-price">45 درهم</span>
                 </div>
             </div>
 
             <div class="menu-content" id="mains">
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Tajine Viande Boeuf Aux Pruneaux</h4>
-                        <p>Slow-cooked beef with sweet prunes and roasted almonds</p>
+                        <h4>طاجين اللحم بالبرقوق</h4>
+                        <p>لحم مطهو ببطء مع البرقوق المعسل واللوز</p>
                     </div>
-                    <span class="menu-price">120 MAD</span>
+                    <span class="menu-price">120 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Couscous Viande et Légumes</h4>
-                        <p>Traditional couscous with tender meat and seasonal vegetables</p>
+                        <h4>كسكس بالخضر</h4>
+                        <p>كسكس تقليدي باللحم والخضروات الموسمية</p>
                     </div>
-                    <span class="menu-price">110 MAD</span>
+                    <span class="menu-price">110 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Kefta Tajine</h4>
-                        <p>Meatballs in tomato sauce with poached eggs</p>
+                        <h4>طاجين كفتة</h4>
+                        <p>كرات اللحم في صلصة الطماطم مع البيض</p>
                     </div>
-                    <span class="menu-price">100 MAD</span>
+                    <span class="menu-price">100 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Rfissa</h4>
-                        <p>Chicken with lentils and fenugreek served on shredded pastry</p>
+                        <h4>رفيسة</h4>
+                        <p>دجاج مع عدس وحلبة ومسمن</p>
                     </div>
-                    <span class="menu-price">130 MAD</span>
+                    <span class="menu-price">130 درهم</span>
                 </div>
             </div>
 
             <div class="menu-content" id="drinks">
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Ceai Marocan de Mentă</h4>
-                        <p>Authentic Moroccan Mint Tea</p>
+                        <h4>شاي مغربي</h4>
+                        <p>شاي أصيل بالنعناع</p>
                     </div>
-                    <span class="menu-price">25 MAD</span>
+                    <span class="menu-price">25 درهم</span>
                 </div>
                 <div class="menu-item">
                     <div class="menu-details">
-                        <h4>Fresh Orange Juice</h4>
-                        <p>Squeezed from local oranges</p>
+                        <h4>عصير برتقال</h4>
+                        <p>عصير طازج</p>
                     </div>
-                    <span class="menu-price">30 MAD</span>
+                    <span class="menu-price">30 درهم</span>
                 </div>
             </div>
 
             <div class="center-text" style="margin-top: 2rem;">
-                <a href="#" class="btn btn-outline">Download Full Menu (PDF)</a>
+                <a href="menu.html" class="btn btn-outline">تحميل القائمة الكاملة (PDF)</a>
             </div>
         </div>
     </section>
-
 
     <section id="gallery" class="section gallery">
         <div class="container">
-            <h2 class="section-title center-text">Atmosphere</h2>
+            <h2 class="section-title center-text">الأجواء</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/interior.png" alt="Interior"></div>
-                <div class="gallery-item"><img src="images/tajine.png" alt="Food"></div>
-                <div class="gallery-item"><img src="images/tea.png" alt="Tea"></div>
-                <div class="gallery-item"><img src="images/couscous.png" alt="Couscous"></div>
+                <div class="gallery-item"><img src="images/interior.png" alt="الداخل"></div>
+                <div class="gallery-item"><img src="images/tajine.png" alt="طعام"></div>
+                <div class="gallery-item"><img src="images/tea.png" alt="شاي"></div>
+                <div class="gallery-item"><img src="images/couscous.png" alt="كسكس"></div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
     <section id="reviews" class="section reviews">
         <div class="container">
-            <h2 class="section-title center-text">Guest Love</h2>
+            <h2 class="section-title center-text">آراء الزبائن</h2>
             <div class="reviews-slider">
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Authentic hidden gem in the Medina, great atmosphere. The best Tajine I've had in Rabat!"</p>
-                    <cite>- Sarah M.</cite>
+                    <p>"جوهرة مخفية في المدينة القديمة، أجواء رائعة. أفضل طاجين تذوقته في الرباط!"</p>
+                    <cite>- سارة م.</cite>
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Exceptional service, English-speaking staff, live music. A truly magical evening."</p>
-                    <cite>- James D.</cite>
+                    <p>"خدمة استثنائية، وموسيقى حية. أمسية ساحرة حقاً."</p>
+                    <cite>- جيمس د.</cite>
                 </div>
                 <div class="review-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Family-friendly, cozy, delicious food. Highly recommend the Rfissa!"</p>
-                    <cite>- Amina K.</cite>
+                    <p>"مناسب للعائلات، مريح، وطعام لذيذ. أنصح بشدة بالرفيسة!"</p>
+                    <cite>- أمينة ك.</cite>
                 </div>
             </div>
             <div class="center-text review-summary">
-                <p>Rated <strong>4.3 ★</strong> on Google (1,142 reviews)</p>
+                <p>تقييم <strong>4.3 ★</strong> على جوجل (1,142 رأي)</p>
             </div>
         </div>
     </section>
-
 
     <section id="contact" class="section contact">
         <div class="container contact-wrapper">
             <div class="contact-info">
-                <h2 class="section-title">Visit Us</h2>
-                <p><i class="fas fa-map-marker-alt"></i> 3 Rue Benjelloul, Souk Sebbat, Rabat</p>
+                <h2 class="section-title">زورونا</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 3 زنقة بنجلول، سوق السباط، الرباط</p>
                 <p><i class="fas fa-phone"></i> 0702-707071</p>
-                <p><i class="far fa-clock"></i> Open Daily: 12:00 - 22:00</p>
+                <p><i class="far fa-clock"></i> مفتوح يومياً: 12:00 - 22:00</p>
                 <p><i class="fab fa-instagram"></i> @darelmedina</p>
 
                 <div class="map-container">
@@ -273,13 +329,13 @@
             </div>
 
             <div class="reservation-form" id="reservation">
-                <h2 class="section-title">Book a Table</h2>
+                <h2 class="section-title">احجز طاولة</h2>
                 <form id="bookingForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="الاسم" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="tel" placeholder="رقم الهاتف" required>
                     </div>
                     <div class="form-group two-col">
                         <input type="date" required>
@@ -287,33 +343,32 @@
                     </div>
                     <div class="form-group">
                         <select>
-                            <option value="2">2 People</option>
-                            <option value="3">3 People</option>
-                            <option value="4">4 People</option>
-                            <option value="5+">5+ People</option>
+                            <option value="2">شخصين</option>
+                            <option value="3">3 أشخاص</option>
+                            <option value="4">4 أشخاص</option>
+                            <option value="5+">5+ أشخاص</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary full-width">Confirm Reservation</button>
+                    <button type="submit" class="btn btn-primary full-width">تأكيد الحجز</button>
                 </form>
             </div>
         </div>
     </section>
 
-
     <footer>
         <div class="container footer-content">
-            <div class="footer-logo">Dar El <span class="gold-text">Medina</span></div>
+            <div class="footer-logo">دار <span class="gold-text">المدينة</span></div>
             <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#menu">Menu</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">الرئيسية</a>
+                <a href="menu.html">القائمة</a>
+                <a href="#contact">اتصل بنا</a>
             </div>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-tripadvisor"></i></a>
             </div>
-            <p class="copyright">&copy; 2025 Dar El Medina. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 دار المدينة. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 

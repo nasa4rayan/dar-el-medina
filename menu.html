@@ -1,35 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Full Menu - Dar El Medina. Authentic Moroccan Cuisine.">
-    <title>Menu | Dar El Medina</title>
+    <meta name="description" content="قائمة الطعام الكاملة - دار المدينة. مأكولات مغربية أصيلة.">
+    <title>القائمة | دار المدينة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .btn,
+        .nav-links a,
+        .category-title,
+        .menu-details h4,
+        .menu-price {
+            font-family: 'Amiri', serif;
+        }
+
+        .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        .lang-switch {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switch {
+                margin-right: auto;
+                margin-left: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Loader -->
     <div id="loader">
-        <div class="loader-content">Dar El <span class="gold-text">Medina</span></div>
+        <div class="loader-content">دار <span class="gold-text">المدينة</span></div>
     </div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Dar El <span class="gold-text">Medina</span></a>
+            <a href="index.html" class="logo">دار <span class="gold-text">المدينة</span></a>
+
+            <div class="lang-switch">
+                <a href="menu.html" class="active">AR</a>
+                <span class="separator">|</span>
+                <a href="menu-en.html">EN</a>
+                <span class="separator">|</span>
+                <a href="menu-fr.html">FR</a>
+            </div>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html" class="active">Menu</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="index.html#reservation" class="btn-nav">Book a Table</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="menu.html" class="active">القائمة</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+                <li><a href="index.html#reservation" class="btn-nav">احجز طاولة</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -40,8 +83,8 @@
     <!-- Menu Header -->
     <header class="page-header">
         <div class="container">
-            <h1 class="fade-in-up">Our <span class="gold-text">Menu</span></h1>
-            <p class="fade-in-up delay-1">Authentic Flavors, Prepared with Passion</p>
+            <h1 class="fade-in-up"><span class="gold-text">قائمتنا</span></h1>
+            <p class="fade-in-up delay-1">نكهات أصيلة، محضرة بشغف</p>
         </div>
     </header>
 
@@ -51,210 +94,210 @@
 
             <!-- Starters -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-bowl-food"></i> Entrées (Starters)</h2>
+                <h2 class="category-title"><i class="fas fa-bowl-food"></i> المقبلات</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Harira Marrakchia</h4>
-                            <p>Traditional Moroccan soup with lentils, chickpeas, and tomatoes</p>
+                            <h4>حريرة مراكشية</h4>
+                            <p>شوربة مغربية تقليدية بالعدس والحمص والطماطم</p>
                         </div>
-                        <span class="menu-price">35 MAD</span>
+                        <span class="menu-price">35 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Assortiment de Salades Marocaines</h4>
-                            <p>Zaalouk, Taktouka, Carrots with cumin, Potato salad</p>
+                            <h4>تشكيلة سلطات مغربية</h4>
+                            <p>زعلوك، تكتوكة، جزر بالكمون، سلطة بطاطس</p>
                         </div>
-                        <span class="menu-price">60 MAD</span>
+                        <span class="menu-price">60 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Briouats Assortis (3 pcs)</h4>
-                            <p>Cheese, Minced Meat, and Chicken pastries</p>
+                            <h4>بريوات مشكلة (3 قطع)</h4>
+                            <p>جبن، لحم مفروم، ودجاج</p>
                         </div>
-                        <span class="menu-price">45 MAD</span>
+                        <span class="menu-price">45 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Pastilla Poulet (Mini)</h4>
-                            <p>Sweet and savory chicken pie with almonds</p>
+                            <h4>بسطيلة دجاج (صغيرة)</h4>
+                            <p>فطيرة دجاج حلوة ومالحة باللوز</p>
                         </div>
-                        <span class="menu-price">70 MAD</span>
+                        <span class="menu-price">70 درهم</span>
                     </div>
                 </div>
             </div>
 
             <!-- Tajines -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-utensils"></i> Tajines</h2>
+                <h2 class="category-title"><i class="fas fa-utensils"></i> الطواجن</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Tajine de Boeuf aux Pruneaux</h4>
-                            <p>Beef with caramelized prunes and roasted almonds</p>
+                            <h4>طاجين اللحم بالبرقوق</h4>
+                            <p>لحم بقر مع البرقوق المعسل واللوز المحمص</p>
                         </div>
-                        <span class="menu-price">120 MAD</span>
+                        <span class="menu-price">120 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Tajine Poulet au Citron Confit</h4>
-                            <p>Chicken with preserved lemons and olives</p>
+                            <h4>طاجين دجاج بالحامض المصير</h4>
+                            <p>دجاج مع الليمون المصير والزيتون</p>
                         </div>
-                        <span class="menu-price">110 MAD</span>
+                        <span class="menu-price">110 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Tajine Agneau aux Légumes</h4>
-                            <p>Lamb with seasonal vegetables</p>
+                            <h4>طاجين الغنمي بالخضر</h4>
+                            <p>لحم غنم مع خضروات موسمية</p>
                         </div>
-                        <span class="menu-price">130 MAD</span>
+                        <span class="menu-price">130 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Tajine Kefta aux Oeufs</h4>
-                            <p>Meatballs in tomato sauce with poached eggs</p>
+                            <h4>طاجين كفتة بالبيض</h4>
+                            <p>كرات اللحم في صلصة الطماطم مع البيض</p>
                         </div>
-                        <span class="menu-price">100 MAD</span>
+                        <span class="menu-price">100 درهم</span>
                     </div>
                 </div>
             </div>
 
             <!-- Couscous & Specialties -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-seedling"></i> Couscous & Specialties</h2>
+                <h2 class="category-title"><i class="fas fa-seedling"></i> الكسكس والتخصصات</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Couscous Royal</h4>
-                            <p>Lamb, Chicken, Merguez, and 7 vegetables</p>
+                            <h4>كسكس ملكي</h4>
+                            <p>لحم غنم، دجاج، مرguez، و 7 خضاري</p>
                         </div>
-                        <span class="menu-price">150 MAD</span>
+                        <span class="menu-price">150 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Couscous Tfaya</h4>
-                            <p>Chicken with caramelized onions and raisins</p>
+                            <h4>كسكس تفاية</h4>
+                            <p>دجاج مع البصل المعسل والزبيب</p>
                         </div>
-                        <span class="menu-price">120 MAD</span>
+                        <span class="menu-price">120 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Rfissa au Poulet Beldi</h4>
-                            <p>Trid pastry with lentils, fenugreek, and saffron chicken</p>
+                            <h4>رفيسة بالدجاج البلدي</h4>
+                            <p>تريد مع العدس والحلبة والدجاج بالزعفران</p>
                         </div>
-                        <span class="menu-price">140 MAD</span>
+                        <span class="menu-price">140 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Tanjia Marrakchia</h4>
-                            <p>Slow-cooked beef in clay pot (24h notice required)</p>
+                            <h4>طنجية مراكشية</h4>
+                            <p>لحم بقر مطهو ببطء في جرة فخارية (طلب قبل 24 ساعة)</p>
                         </div>
-                        <span class="menu-price">160 MAD</span>
+                        <span class="menu-price">160 درهم</span>
                     </div>
                 </div>
             </div>
 
             <!-- Grillades -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-fire"></i> Grillades (Grill)</h2>
+                <h2 class="category-title"><i class="fas fa-fire"></i> المشويات</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Mix Grill</h4>
-                            <p>Selection of skewers, chops, and merguez</p>
+                            <h4>مشويات مشكلة</h4>
+                            <p>تشكيلة من القطبان، الكفتة، والمرguez</p>
                         </div>
-                        <span class="menu-price">160 MAD</span>
+                        <span class="menu-price">160 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Brochettes de Filet</h4>
-                            <p>Tender beef tenderloin skewers</p>
+                            <h4>قطبان فيليه</h4>
+                            <p>قطبان لحم بقر طري</p>
                         </div>
-                        <span class="menu-price">130 MAD</span>
+                        <span class="menu-price">130 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Côtelettes d'Agneau</h4>
-                            <p>Grilled lamb chops with herbs</p>
+                            <h4>ضلعة غنمي</h4>
+                            <p>ضلع خروف مشوي بالأعشاب</p>
                         </div>
-                        <span class="menu-price">140 MAD</span>
+                        <span class="menu-price">140 درهم</span>
                     </div>
                 </div>
             </div>
 
             <!-- Juices & Drinks -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-glass-water"></i> Jus & Boissons (Drinks)</h2>
+                <h2 class="category-title"><i class="fas fa-glass-water"></i> العصائر والمشروبات</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Jus d'Orange Pressé</h4>
-                            <p>Freshly squeezed orange juice</p>
+                            <h4>عصير برتقال طازج</h4>
+                            <p>معصور طازجاً</p>
                         </div>
-                        <span class="menu-price">30 MAD</span>
+                        <span class="menu-price">30 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Jus d'Avocat</h4>
-                            <p>Avocado smoothie with milk and almonds</p>
+                            <h4>عصير أفوكادو</h4>
+                            <p>عصير أفوكادو بالحليب واللوز</p>
                         </div>
-                        <span class="menu-price">40 MAD</span>
+                        <span class="menu-price">40 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Panaché Maison</h4>
-                            <p>Mixed fruit cocktail</p>
+                            <h4>بناشي منزلي</h4>
+                            <p>كوكتيل فواكه مشكلة</p>
                         </div>
-                        <span class="menu-price">35 MAD</span>
+                        <span class="menu-price">35 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Jus de Citron à la Menthe</h4>
-                            <p>Refreshing lemon juice with fresh mint</p>
+                            <h4>عصير حامض بالنعناع</h4>
+                            <p>عصير ليمون منعش مع نعناع طازج</p>
                         </div>
-                        <span class="menu-price">30 MAD</span>
+                        <span class="menu-price">30 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Thé Marocain (Pot)</h4>
-                            <p>Traditional Mint Tea</p>
+                            <h4>شاي مغربي (براد)</h4>
+                            <p>شاي بالنعناع التقليدي</p>
                         </div>
-                        <span class="menu-price">25 MAD</span>
+                        <span class="menu-price">25 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Eau Minérale / Gazeuse</h4>
-                            <p>Sidi Ali / Oulmes</p>
+                            <h4>مياه معدنية / غازية</h4>
+                            <p>سيدي علي / والماس</p>
                         </div>
-                        <span class="menu-price">20 MAD</span>
+                        <span class="menu-price">20 درهم</span>
                     </div>
                 </div>
             </div>
 
             <!-- Desserts -->
             <div class="menu-category fade-in-up">
-                <h2 class="category-title"><i class="fas fa-cookie"></i> Desserts</h2>
+                <h2 class="category-title"><i class="fas fa-cookie"></i> الحلويات</h2>
                 <div class="menu-grid">
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Salade de Fruits Frais</h4>
-                            <p>Seasonal fruits with orange blossom water</p>
+                            <h4>سلطة فواكه طازجة</h4>
+                            <p>فواكه موسمية بماء الزهر</p>
                         </div>
-                        <span class="menu-price">40 MAD</span>
+                        <span class="menu-price">40 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Jawhara</h4>
-                            <p>Crispy pastry layered with milk cream and nuts</p>
+                            <h4>جوهرة</h4>
+                            <p>رقائق مقرمشة مع كريمة الحليب والمكسرات</p>
                         </div>
-                        <span class="menu-price">50 MAD</span>
+                        <span class="menu-price">50 درهم</span>
                     </div>
                     <div class="menu-item">
                         <div class="menu-details">
-                            <h4>Pâtisserie Marocaine (Assortiment)</h4>
-                            <p>Selection of traditional almond pastries</p>
+                            <h4>حلويات مغربية (تشكيلة)</h4>
+                            <p>مختارات من حلويات اللوز التقليدية</p>
                         </div>
-                        <span class="menu-price">45 MAD</span>
+                        <span class="menu-price">45 درهم</span>
                     </div>
                 </div>
             </div>
@@ -265,23 +308,23 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
-            <div class="footer-logo">Dar El <span class="gold-text">Medina</span></div>
+            <div class="footer-logo">دار <span class="gold-text">المدينة</span></div>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">القائمة</a>
+                <a href="index.html#contact">اتصل بنا</a>
             </div>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-tripadvisor"></i></a>
             </div>
-            <p class="copyright">&copy; 2025 Dar El Medina. All rights reserved.</p>
+            <p class="copyright">&copy; 2025 دار المدينة. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/212702707071" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/212702707071" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 

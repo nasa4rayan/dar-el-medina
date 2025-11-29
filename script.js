@@ -103,4 +103,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // WhatsApp Popup Widget
+    const whatsappFloat = document.getElementById('whatsappFloat');
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    const closeWhatsappPopup = document.getElementById('closeWhatsappPopup');
+    const sendWhatsapp = document.getElementById('sendWhatsapp');
+    const whatsappInput = document.getElementById('whatsappInput');
+
+    if (whatsappFloat && whatsappPopup) {
+        // Toggle popup
+        whatsappFloat.addEventListener('click', (e) => {
+            e.preventDefault();
+            whatsappPopup.classList.toggle('active');
+        });
+
+        // Close popup
+        if (closeWhatsappPopup) {
+            closeWhatsappPopup.addEventListener('click', () => {
+                whatsappPopup.classList.remove('active');
+            });
+        }
+
+        // Send message
+        const sendMessage = () => {
+            const message = whatsappInput.value.trim();
+            if (message) {
+                const phoneNumber = '212702707071';
+                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+                whatsappInput.value = '';
+                whatsappPopup.classList.remove('active');
+            }
+        };
+
+        if (sendWhatsapp) {
+            sendWhatsapp.addEventListener('click', sendMessage);
+        }
+
+        // Send on Enter key
+        if (whatsappInput) {
+            whatsappInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+    }
+
 });
