@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Mobile Navigation
+
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('toggle');
     });
 
-    // Close mobile menu when a link is clicked
+
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -18,49 +18,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Menu Tabs
+
     const tabBtns = document.querySelectorAll('.tab-btn');
     const menuContents = document.querySelectorAll('.menu-content');
 
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
+
             tabBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+
             btn.classList.add('active');
 
-            // Hide all menu contents
+
             menuContents.forEach(content => content.classList.remove('active'));
 
-            // Show target menu content
+
             const target = btn.getAttribute('data-target');
             document.getElementById(target).classList.add('active');
         });
     });
 
-    // Reservation Form Handling
+
     const form = document.getElementById('bookingForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const originalText = btn.innerText;
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
 
-        btn.innerText = 'Reservation Confirmed!';
-        btn.style.backgroundColor = '#2ecc71';
-        btn.style.borderColor = '#2ecc71';
-        btn.style.color = '#fff';
+            btn.innerText = 'Reservation Confirmed!';
+            btn.style.backgroundColor = '#2ecc71';
+            btn.style.borderColor = '#2ecc71';
+            btn.style.color = '#fff';
 
-        setTimeout(() => {
-            form.reset();
-            btn.innerText = originalText;
-            btn.style.backgroundColor = '';
-            btn.style.borderColor = '';
-            btn.style.color = '';
-            alert('Thank you! Your table at Dar El Medina has been reserved. We look forward to welcoming you.');
-        }, 2000);
-    });
+            setTimeout(() => {
+                form.reset();
+                btn.innerText = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.borderColor = '';
+                btn.style.color = '';
+                alert('Thank you! Your table at Dar El Medina has been reserved. We look forward to welcoming you.');
+            }, 2000);
+        });
+    }
 
-    // Scroll Animations
+
     const observerOptions = {
         threshold: 0.1
     };
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Select elements to animate
+
     const animateElements = document.querySelectorAll('.dish-card, .menu-item, .gallery-item, .review-card, .section-title');
 
     animateElements.forEach(el => {
@@ -85,7 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Navbar Scroll Effect
+
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
